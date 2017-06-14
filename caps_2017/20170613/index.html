@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Multisistemas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style type="text/css">
+    /* CLIENT-SPECIFIC STYLES */
+    #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+    .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+    body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+    table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+    img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+    /* RESET STYLES */
+    body{margin:0; padding:0;}
+    img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+    table{border-collapse:collapse !important;}
+    body{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+    /* iOS BLUE LINKS */
+    .appleBody a {color:#68440a; text-decoration: none;}
+    .appleFooter a {color:#999999; text-decoration: none;}
+
+    .phone-button {
+        color: #146aae;
+        text-decoration: none;
+        border: 1px solid #cccccc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* MOBILE STYLES */
+    @media screen and (max-width: 525px) {
+
+        /* ALLOWS FOR FLUID TABLES */
+        table[class="wrapper"]{
+          width:100% !important;
+        }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+        td[class="logo"]{
+          text-align: left;
+          padding: 20px 0 20px 0 !important;
+        }
+
+        td[class="logo"] img{
+          margin:0 auto!important;
+        }
+
+        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+        td[class="mobile-hide"]{
+          display:none;}
+
+        img[class="mobile-hide"]{
+          display: none !important;
+        }
+
+        img[class="img-max"]{
+          max-width: 100% !important;
+          height:auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        table[class="responsive-table"]{
+          width:100%!important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        td[class="padding"]{
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        td[class="padding-copy"]{
+          padding: 10px 5% 10px 5% !important;
+          text-align: center;
+        }
+
+        td[class="padding-meta"]{
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        td[class="no-pad"]{
+          padding: 0 0 20px 0 !important;
+        }
+
+        td[class="no-padding"]{
+          padding: 0 !important;
+        }
+
+        td[class="section-padding"]{
+          padding: 50px 15px 50px 15px !important;
+        }
+
+        td[class="section-padding-bottom-image"]{
+          padding: 50px 15px 0 15px !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        td[class="mobile-wrapper"]{
+            padding: 10px 5% 15px 5% !important;
+        }
+
+        table[class="mobile-button-container"]{
+            margin:0 auto;
+            width:100% !important;
+        }
+
+        a[class="mobile-button"]{
+            width:80% !important;
+            padding: 15px !important;
+            border: 0 !important;
+            font-size: 16px !important;
+        }
+    }
+</style>
+<style type="text/css" id="hs-inline-css">
+        /*<![CDATA[*/
+            /* everything in this node will be inlined */
+
+            /* ==== Page Styles ==== */
+            
+            body, #backgroundTable {
+                background-color: #f2f2f2; /* Use body to determine background color */
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            
+            #templateTable {
+                width: 660px;
+                background-color: #ffffff;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+                color:#444444;
+                display:block;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-weight:bold;
+                line-height:100%;
+                margin-top:0;
+                margin-right:0;
+                margin-bottom:10px;
+                margin-left:0;
+                text-align:left;
+            }
+
+            h1, .h1 {
+                font-size:26px;
+            }
+
+            h2, .h2 {
+                font-size:20px;
+            }
+
+            h3, .h3 {
+                font-size:15px;
+            }
+
+            h4, .h4 {
+                font-size:13px;
+            }
+
+            h5, .h5 {
+                font-size:11px;
+            }
+
+            h6, .h6 {
+                font-size:10px;
+            }
+
+            /* ==== Header Styles ==== */
+
+            #headerTable {
+                background-color: #f2f2f2;
+                color:#444444;
+                font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size:10px;
+                line-height:120%;
+                text-align:right;
+                border-collapse: separate !important;
+                padding-right: 0px;
+            }
+            
+            #headerTable a:link, #headerTable a:visited, /* Yahoo! Mail Override */ #headerTable a .yshortcuts /* Yahoo! Mail Override */{
+                font-weight:normal;
+                text-decoration:underline;
+            }
+            
+            /* ==== Template Wrapper Styles ==== */
+
+            #contentCell {
+                padding: 10px 20px;
+                background-color: #f2f2f2;
+            }
+             
+            #contentTableOuter {
+                border-collapse: separate !important;
+                
+                background-color: #ffffff;
+                
+                box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+                
+
+                padding: 0px;
+            }
+
+            #contentTableInner {
+                width: 660px;
+            }
+            
+            /* ==== Body Styles ==== */
+            
+            .bodyContent {
+                color:#444444;
+                font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 15px;
+                line-height:150%;
+                text-align:left;
+            }
+            
+            /* ==== Column Styles ==== */
+
+            table.columnContentTable {
+                border-collapse:separate !important;
+                border-spacing:0;
+                
+                background-color: #ffffff;
+            }
+            
+            td[class~="columnContent"] {
+                color:#444444;
+                font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size:15px;
+                line-height:120%;
+                padding-top:20px;
+                padding-right:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+            }
+
+            /* ==== Footer Styles ==== */
+            
+            #footerTable {
+                background-color: #f2f2f2;
+            }
+
+            #footerTable a {
+                color: #999999;
+            }
+            
+            #footerTable {
+                color:#999999;
+                font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size:12px;
+                line-height:120%;
+                padding-top:20px;
+                padding-right:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+                text-align:center;
+            }
+            
+            #footerTable a:link, #footerTable a:visited, /* Yahoo! Mail Override */ #footerTable a .yshortcuts /* Yahoo! Mail Override */{
+                font-weight:normal;
+                text-decoration:underline;
+            }
+
+            .hs-image-social-sharing-24 {
+                max-width: 24px;
+                max-height: 24px;
+            }
+
+            /* ==== Standard Resets ==== */
+            .ExternalClass{
+                width:100%;
+            } /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            } /* Force Hotmail to display normal line spacing */
+            body, table, td, p, a, li, blockquote{
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+            } /* Prevent WebKit and Windows mobile changing default text sizes */
+            table, td {
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            } /* Remove spacing between tables in Outlook 2007 and up */
+            img {
+                vertical-align: bottom;
+                -ms-interpolation-mode:bicubic;
+            } /* Allow smoother rendering of resized image in Internet Explorer */
+    
+            /* Reset Styles */
+            body {
+                margin:0;
+                padding:0;
+            }
+            table {
+                border-collapse:collapse !important;
+            }
+            body, #backgroundTable, #bodyCell{
+                height:100% !important;
+                margin:0;
+                padding:0;
+                width:100% !important;
+            }
+            
+            /* iOS automatically adds a link to addresses */
+            /* Style the footer with the same color as the footer text */
+            #footer a {
+                color: #999999;;
+                -webkit-text-size-adjust: none;
+                text-decoration: underline;
+                font-weight: normal
+            }
+    
+            /* Hide preview text on rendering */
+            #preview_text {
+                display: none;
+            }
+        /*]]>*/
+</style>
+<style type="text/css">
+        /*<![CDATA[*/
+            /* ==== Mobile Styles ==== */
+            
+            /* Constrain email width for small screens */
+            @media screen and (max-width: 650px) {
+                table[id="backgroundTable"] {
+                    width: 95% !important;
+                }
+                
+                table[id="templateTable"] {
+                    max-width:660px !important;
+                    width:100% !important;
+                }
+
+                table[id="contentTableInner"] {
+                    max-width:660px !important;
+                    width:100% !important;
+                }
+            
+                /* Makes image expand to take 100% of width*/
+                img {
+                    width: 100% !important;
+                    height: auto !important;
+                }
+
+                #contentCell {
+                    padding: 10px 10px !important;
+                }
+
+                #headerTable {
+                    padding-right: 0.0px !important;
+                }
+
+                #contentTableOuter {
+                    padding: 0.0px !important;
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                /* ==== Client-Specific Mobile Styles ==== */
+                body, table, td, p, a, li, blockquote{
+                    -webkit-text-size-adjust:none !important;
+                } /* Prevent Webkit platforms from changing default text sizes */
+                body{
+                    width:100% !important;
+                    min-width:100% !important;
+                } /* Prevent iOS Mail from adding padding to the body */
+
+                /* ==== Mobile Reset Styles ==== */
+                td[id="bodyCell"] {
+                    padding:10px !important;
+                }
+
+                /* ==== Mobile Template Styles ==== */
+    
+                table[id="templateTable"] {
+                    max-width:660px !important;
+                    width:100% !important;
+                }
+
+                table[id="contentTableInner"] {
+                    max-width:660px !important;
+                    width:100% !important;
+                }
+                
+                /* ==== Image Alignment Styles ==== */
+
+                h1, .h1 {
+                    font-size:26px !important;
+                    line-height:125% !important;
+                }
+
+                h2, .h2 {
+                    font-size:20px !important;
+                    line-height:125% !important;
+                }
+
+                h3, .h3 {
+                    font-size:15px !important;
+                    line-height:125% !important;
+                }
+
+                h4, .h4 {
+                    font-size:13px !important;
+                    line-height:125% !important;
+                }
+
+                h5, .h5 {
+                    font-size:11px !important;
+                    line-height:125% !important;
+                }
+
+                h6, .h6 {
+                    font-size:10px !important;
+                    line-height:125% !important;
+                }
+                
+                .hide {
+                    display:none !important;
+                } /* Hide to save space */
+
+                /* ==== Body Styles ==== */
+                
+                td[class="bodyContent"] {
+                    font-size:16px !important;
+                    line-height:145% !important;
+                }
+                
+                /* ==== Footer Styles ==== */
+
+                td[id="footerTable"]{
+                    padding-left: 0px !important;
+                    padding-right: 0px !important;
+                    font-size:12px !important;
+                    line-height:145% !important;
+                }
+                
+                /* ==== Image Alignment Styles ==== */
+                
+                table[class="alignImageTable"] {
+                    width: 100% !important;
+                }
+                
+                td[class="imageTableTop"] {
+                    display: none !important;
+                    /*padding-top: 10px !important;*/
+                }
+                td[class="imageTableRight"] {
+                    display: none !important;
+                }
+                td[class="imageTableBottom"] {
+                    padding-bottom: 10px !important;
+                }
+                td[class="imageTableLeft"] {
+                    display: none !important;
+                }
+                
+                /* ==== Column Styles ==== */
+
+                td[class~="column"] {
+                    display: block !important;
+                    width: 100% !important;
+                    padding-top: 0 !important;
+                    padding-right: 0 !important;
+                    padding-bottom: 0 !important;
+                    padding-left: 0 !important;
+                }
+
+                td[class~=columnContent] {
+                    font-size:14px !important;
+                    line-height:145% !important;
+                
+                    padding-top: 10px !important;
+                    padding-right: 10px !important;
+                    padding-bottom: 10px !important;
+                    padding-left: 10px !important;
+                }
+
+                #contentCell {
+                    padding: 10px 0px !important;
+                }
+
+                #headerTable {
+                    padding-right: 0.0px !important;
+                }
+
+                #contentTableOuter {
+                    padding: 0.0px !important;
+                }
+            }
+
+            #preview_text {
+                display: none;
+            }
+        /*]]>*/
+</style>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color:#f2f2f2; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; height:100% !important; margin:0; padding:0; width:100% !important" bgcolor="#f2f2f2" height="100% !important" width="100% !important">
+
+<!-- ONE COLUMN SECTION -->
+
+<table align="center" bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" height="100% !important" width="100% !important" id="backgroundTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; background-color:#f2f2f2; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; height:100% !important; margin:0; padding:0; width:100% !important">
+    <tbody><tr>
+        <td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; height:100% !important; margin:0; padding:0; width:100% !important" height="100% !important" width="100% !important"> <table border="0" cellpadding="0" cellspacing="0" id="templateTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; width:660px; background-color:#ffffff; -webkit-font-smoothing:antialiased" width="660" bgcolor="#ffffff">
+            <tbody>
+                <tr>
+                    <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+                        <div class="header-container-wrapper">
+                        </div>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="headerTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#f2f2f2; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; line-height:120%; text-align:right; border-collapse:separate !important; padding-right:0px" bgcolor="#f2f2f2" align="right">
+                                <tbody>
+                                    <tr>
+                                        <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                                <tbody>
+                                                    <tr>
+                                                        <td valign="top" colspan="12" width="100.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444" align="left">
+                                                            <div class="widget-span widget-type-email_view_as_web_page " style="" data-widget-type="email_view_as_web_page">
+                                                            <div style="padding-top: 15px; font-family: Geneva, Verdana, Arial, Helvetica, sans-serif; text-align: right; font-size: 9px; line-height: 1.34em; color: #999999">
+                                                                ¿No se muestra correctamente? Vea este correo electrónico como una página web <a class="hubspot-mergetag" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; color:#999999; text-decoration:underline; white-space:nowrap" data-viewaswebpage="true" href="http://newsletters.multisistemax.com/caps_2017/20170613/" data-hs-link-id="0" target="_blank">aquí</a>.
+                                                            </div>
+                                                            </div><!--end widget-span -->
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" id="contentCell" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; padding:10px 20px; background-color:#f2f2f2" bgcolor="#f2f2f2">
+                                <!-- Begin Template Wrapper -->
+                                <!-- This separates the preheader which usually contains the "open in browser, etc" content
+                                from the actual body of the email. Can alternatively contain the footer too, but I choose not
+                                to so that it stays outside of the border. -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="contentTableOuter" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; background-color:#ffffff; box-shadow:0px 1px rgba(0, 0, 0, 0.1); padding:0px; border:1px solid #cccccc; border-bottom:1px solid #acacac" bgcolor="#ffffff">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+                                            <div class="body-container-wrapper">
+                                                </div>
+                                                    <table border="0" cellpadding="0" cellspacing="0" id="contentTableInner" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; width:660px" width="660">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left; padding: 0 40px;">
+                                                                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                                                            <tbody><tr>
+                                                                <td valign="top" colspan="12" width="100.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444" align="left">
+                                                                <div class="widget-span widget-type-linked_image " style="" data-widget-type="linked_image"><div class="layout-widget-wrapper">
+                                                                <div id="hs_cos_wrapper_module_14562198940555872" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image">
+                                                                
+                                                                </div>
+                                                                </div><!--end layout-widget-wrapper -->
+                                                                </div><!--end widget-span -->
+                                                                   </td>
+                                                                           </tr>
+                                                                    </tbody></table>
+                                                                   </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left">
+                                                                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                                                            <tbody><tr>
+                                                                <td valign="top" colspan="12" width="100.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444" align="left">
+                                                                <div class="widget-span widget-type-linked_image " style="" data-widget-type="linked_image"><div class="layout-widget-wrapper">
+                                                                <div id="hs_cos_wrapper_module_14562224581306982" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="color: inherit; font-size: inherit; line-height: inherit; margin-top:30px; margin-left: 30px; margin-right: 30px;" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><a href="https://www.multisistemas.com.sv" target="_blank" id="hs-link-module_14562224581306982" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; border-width:0px; border:0px" data-hs-link-id="0"><img src="img/20170613.png" class="hs-image-widget" style="vertical-align:bottom; -ms-interpolation-mode:bicubic; max-height:100%; max-width:100%; border-width:0px; border:0px; border-radius: 8px;" width="100%" height="100%" alt="" title=""></a></div>
+                                                                </div><!--end layout-widget-wrapper -->
+                                                                </div><!--end widget-span -->
+                                                                   </td>
+                                                                           </tr>
+                                                                    </tbody></table>
+                                                                   </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left">
+                                                                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                                                            <tbody><tr>
+                                                                <td valign="top" colspan="12" width="100.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444" align="left">
+                                                                <div class="widget-span widget-type-rich_text " style="" data-widget-type="rich_text"><div class="layout-widget-wrapper">
+                                                                <div id="hs_cos_wrapper_module_14562225981067885" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="margin: 30px;">
+                                                                
+                                                                <p style="margin-bottom:1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; text-align: justify;"><span style="color: #000000; text-align: justify;">
+                                                                
+                                                                </span></p>
+                                                                </div>
+                                                                
+                                                                <a href="https://multisistemas.com.sv/event-20170613/" style="text-decoration: none;" target="_blank">
+                                                                <div style="border: none; border-radius: 8px; padding: 10px; box-sizing: border-box; margin:auto; background-color: rgba(62, 110, 183, 0.91); width:200px; margin-bottom: 30px;">
+                                                                <span class="entry-title" style="color:#ffffff; display:block; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight:bold; line-height:100%; margin-top:0; margin-right:0; margin-bottom:0px; margin-left:0; text-align:center;" align="left">Más información aquí</span>
+                                                                </div>
+                                                                </a>
+                                                                </div></div>
+                                                                </div><!--end layout-widget-wrapper -->
+                                                                </div><!--end widget-span -->
+                                                                   </td>
+                                                                           </tr>
+                                                                    </tbody></table>
+                                                                   </td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                            <!-- End Template Wrapper -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+                                            <!-- Begin Template Footer -->
+                                            <div class="footer-container-wrapper">
+                                            </div>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="footerTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; background-color:#f2f2f2; color:#999999; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px; line-height:120%; padding-top:20px; padding-right:20px; padding-bottom:20px; padding-left:20px; text-align:center" bgcolor="#f2f2f2" align="center">
+                                            <tbody><tr>
+                                            <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                            <tbody><tr>
+                                            <td valign="top" colspan="12" width="100.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444; padding:20px 20px 0px 20px" align="left">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                            <tbody><tr>
+                                            <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                            <tbody><tr>
+                                            <td valign="top" colspan="6" width="50.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:50.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444" align="left">
+                                            <div class="widget-span widget-type-raw_html " style="" data-widget-type="raw_html"><div class="layout-widget-wrapper">
+                                            <div id="hs_cos_wrapper_module_14562329227061164" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html">
+                                            <a href="https://www.multisistemas.com.sv"> 
+                                            <img src="img/logo_gray.png" width="300" height="100" border="0" style="vertical-align:bottom; -ms-interpolation-mode:bicubic; height: 80px; color:#c3c3c3"></a>
+                                            </div>
+                                            </div><!--end layout-widget-wrapper -->
+                                            </div><!--end widget-span -->
+                                            </td>
+                                            <td valign="top" colspan="6" width="50.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:50.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444; margin-bottom:40px;" align="left">
+                                            <div class="widget-span widget-type-raw_html " style="" data-widget-type="raw_html"><div class="layout-widget-wrapper">
+                                            <div id="hs_cos_wrapper_module_14562329994981753" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><div style="text-align:right;float:right;">
+                                            <a href="https://www.instagram.com/multisistemasei/" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; color:#999999" data-hs-link-id="0" target="_blank"><img style="vertical-align:bottom; -ms-interpolation-mode:bicubic; float:right; margin-left:10px; margin-left:10px; margin-left:10px" src="img/instagram.png"></a>
+                                            <a href="http://www.linkedin.com/company/multisistemas-e-inversiones-s-a-de-c-v-" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; color:#999999" data-hs-link-id="0" target="_blank"><img style="vertical-align:bottom; -ms-interpolation-mode:bicubic; float:right; margin-left:10px; margin-left:10px; margin-left:10px" src="img/linkedin.png"></a>
+                                            <a href="https://www.facebook.com/multisistemas.com.sv" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; color:#999999" data-hs-link-id="0" target="_blank"><img style="vertical-align:bottom; -ms-interpolation-mode:bicubic; float:right; margin-left:10px; margin-left:10px" src="img/facebook.png"></a>
+                                            <a href="https://twitter.com/MultisistemasEI" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; color:#999999" data-hs-link-id="0" target="_blank"><img style="vertical-align:bottom; -ms-interpolation-mode:bicubic; float:right; margin-left:10px" src="img/twitter.png"></a>
+                                            </div>
+                                            <p style="display: inline-block; color: #666666; text-align: right;">Síganos en las redes sociales y no se pierda nuestras publicaciones</p>
+                                            </div>
+                                            </div><!--end layout-widget-wrapper -->
+                                            </div><!--end widget-span -->
+                                       </td>
+                                               </tr>
+                                        </tbody></table>
+                                       </td>
+                                   </tr>
+                                   <tr>
+                                    <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:150%; text-align:left">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                                                <tbody><tr>
+                                    <td valign="top" colspan="12" width="100.0%" class=" column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100.0%; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; line-height:1.5em; color:#444444" align="left">
+                                    <div class="widget-span widget-type-email_can_spam " style="" data-widget-type="email_can_spam"><p id="footer" style="margin-bottom:1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#999999; display:block" align="center">&nbsp;</p>
+                                    <p style="margin-bottom:1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#999999; display:block" align="center"><span>Este boletín ha sido enviado por Multisistemas ©</span><span>&nbsp;a destinatarios con los que mantiene una relación contractual previa o que han solicitado o autorizado expresamente su envío.</span></p>
+                                    <p style="margin-bottom:1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#999999; display:block" align="center">&nbsp;</p>
+                                    <p style="margin-bottom:1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#999999; display:block" align="center"><span>&nbsp;<a href="https://www.multisistemas.com.sv" target="_blank" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; text-decoration:underline; whitespace:nowrap; color:#999999" data-hs-link-id="0">Multisistemas 2017 - Todos los derechos reservados</a><span>&nbsp;</span></span></p>
+                                    </div><!--end widget-span -->
+                                       </td>
+                                               </tr>
+                                        </tbody></table>
+                                       </td>
+                                    </tr>
+                        <tr>
+                            <td style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt"></td>
+                        </tr>
+                        </tbody></table>
+                            <!-- End Template Footer -->
+                        </td>
+                        </tr>
+                    </tbody></table>
+                    <!-- End Template Container -->
+                </td>
+            </tr>
+        </tbody></table>
+
+</body>
+</html>
